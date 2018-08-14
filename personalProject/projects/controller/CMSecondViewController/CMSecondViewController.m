@@ -1,0 +1,60 @@
+//
+//  CMSecondViewController.m
+//  personalProject
+//
+//  Created by mengran on 2018/7/29.
+//  Copyright © 2018年 ggV5. All rights reserved.
+//
+
+#import "CMSecondViewController.h"
+#import "Masonry.h"
+#import "CMSharedManage.h"
+
+@interface CMSecondViewController ()
+@property (nonatomic, strong) UIButton              *testBtn;
+@end
+
+@implementation CMSecondViewController
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view addSubview:self.testBtn];
+    [self customLayout];
+}
+
+-(void)customLayout{
+    [self.testBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view).offset(-Get375Width(40));
+        make.size.mas_equalTo(CGSizeMake(Get375Width(100), Get375Width(40)));
+    }];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)testBtnClick:(UIButton *)btn{
+    self.hidesBottomBarWhenPushed = YES;
+    NSString *routeStr = @"0002";
+    NSString *UrlStr = [NSString stringWithFormat:@"http://m.suning.com/?adTypeCode=%@&adId=",routeStr];
+    routerToTargetURL(UrlStr);
+    self.hidesBottomBarWhenPushed = NO;
+}
+
+-(UIButton *)testBtn{
+    if (!_testBtn) {
+        _testBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_testBtn setTitle:@"路由跳转secondPage" forState:UIControlStateNormal];
+        [_testBtn setTitleColor:[UIColor colorWithHexString:@"#222222"] forState:UIControlStateNormal];
+        _testBtn.titleLabel.font = [UIFont systemFontOfSize:CMFontSize(14)];
+        _testBtn.backgroundColor = [UIColor colorWithHexString:@"#ffffff"];
+        [_testBtn addTarget:self action:@selector(testBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    return _testBtn;
+}
+
+@end
