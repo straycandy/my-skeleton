@@ -200,4 +200,15 @@
     UIViewController *vc = [self routeURL:ksecondPageVC parmas:nil];
     obj.targetController = vc;
 }
+
+//0003  WKWebViewController
+-(void)routeToWKWebView:(CMRoutesObject *)obj{
+    NSDictionary *paramDic = obj.allParams;
+    NSString *urlStr = EncodeStringFromDic(paramDic, @"urlStr");
+    if (IsStrEmpty(urlStr)) {
+        urlStr = @"";
+    }
+    UIViewController *vc = [self routeURL:kWKWebViewVC parmas:@{kWKWebViewVC_URLStr:urlStr}];
+    obj.targetController = vc;
+}
 @end

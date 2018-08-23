@@ -24,6 +24,11 @@
 #pragma mark --------routes--------
 static NSString *const kCMRootTabBarVC = @"personalProject/projects/controller/CMrootViewController";
 static NSString *const ksecondPageVC = @"personalProject/projects/controller/secondPageViewController";
+static NSString *const kWKWebViewVC = @"personalProject/componets/webView/WKWebViewController";
+
+#pragma mark -
+#pragma mark --------routes parameter keys--------
+static NSString *const kWKWebViewVC_URLStr = @"kWKWebViewVC_URLStr";
 
 
 static NSString *const kJLRoutePatternKey = @"JLRoutePattern";

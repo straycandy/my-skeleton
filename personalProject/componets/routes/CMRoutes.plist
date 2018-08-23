@@ -6,5 +6,7 @@
 	<string>routeToCMRootTabBarViewController:</string>
 	<key>0002</key>
 	<string>routeToSecondVC:</string>
+	<key>0003</key>
+	<string>routeToWKWebView:</string>
 </dict>
 </plist>

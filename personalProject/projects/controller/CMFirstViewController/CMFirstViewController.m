@@ -48,10 +48,7 @@
     [super sectionBar:sectionBar didSelectAtInedx:index];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 /**
  *  viewDic 储存view的字典

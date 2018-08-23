@@ -10,4 +10,5 @@
 
 @interface UIColor (CMBase)
 + (UIColor *)colorWithHexString:(NSString *)hexStr;
++ (UIColor *)colorWithRGBHex:(UInt32)hex;
 @end

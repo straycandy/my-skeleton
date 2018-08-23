@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NSString (CMBase)
 /**
@@ -17,4 +18,24 @@
 - (NSString *)trim;
 - (NSDictionary*)queryDictionaryUsingEncodingQR:(NSStringEncoding)encoding;
 - (NSDictionary*)queryDictionaryUsingEncoding:(NSStringEncoding)encoding;
+- (NSString *)URLEncoding;
+- (NSString *)URLEvalutionEncoding;
+/*
+ * 取得一个串的 ‘separateString’之前部分
+ * 2015/12/14
+ * @xzoscar
+ */
+- (NSString *)prefixStringWithSeparate:(NSString *)separateString;
+
+/*!
+ @brief 单行字符串size计算,\ Single line, no wrapping
+ */
+- (CGSize)sizeOfSingleLineWithFont:(UIFont *)font;
+
+/*!
+ @brief 推算字符串size
+ */
+- (CGSize)sizeWithFont:(UIFont *)font
+           limitedSize:(CGSize)size
+         lineBreakMode:(NSLineBreakMode)lineBreakMode;
 @end
